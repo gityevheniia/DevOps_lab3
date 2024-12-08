@@ -1,9 +1,9 @@
-name: Build C++ Program
+name: Build Tarball
 
 on:
   push:
     branches:
-      - branchMake
+      - branchAutomake
 
 jobs:
   build:
@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: sudo apt update && sudo apt install -y g++
-      - name: Build Project
-        run: make
+        run: sudo apt update && sudo apt install -y automake autoconf libtool
+      - name: Build Tarball
+        run: |
+          aclocal
+          autoconf
+          automake --add-missing
+          ./configure
+          make dist
