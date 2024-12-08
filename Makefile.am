@@ -1,2 +1,2 @@
-bin_PROGRAMS = hello
-hello_SOURCES = main.cpp
+check_PROGRAMS = test
+test_SOURCES = test.cpp

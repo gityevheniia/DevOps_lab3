@@ -1,9 +1,9 @@
-name: Build Debian Package
+name: Build and Test
 
 on:
   push:
     branches:
-      - branchAutoPackage
+      - branchAutoTest
 
 jobs:
   build:
@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: sudo apt update && sudo apt install -y dh-make dpkg-dev g++
-      - name: Build Debian Package
+        run: sudo apt update && sudo apt install -y g++
+      - name: Build and Test
         run: |
-          dpkg-buildpackage -us -uc
+          make
+          make check
