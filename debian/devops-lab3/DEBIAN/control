@@ -1,0 +1,10 @@
+Package: devops-lab3
+Version: 1.0
+Architecture: amd64
+Maintainer: yevheniia <bukhalo.yevheniia@lll.kpi.ua>
+Installed-Size: 28
+Depends: libc6 (>= 2.34), libstdc++6 (>= 4.4)
+Section: unknown
+Priority: optional
+Homepage: <insert the upstream URL, if relevant>
+Description: Sample C++ program for DevOps Lab

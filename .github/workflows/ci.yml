@@ -1,9 +1,9 @@
-name: Build Tarball
+name: Build Debian Package
 
 on:
   push:
     branches:
-      - branchAutomake
+      - branchAutoPackage
 
 jobs:
   build:
@@ -12,11 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: sudo apt update && sudo apt install -y automake autoconf libtool
-      - name: Build Tarball
+        run: sudo apt update && sudo apt install -y dh-make dpkg-dev g++
+      - name: Build Debian Package
         run: |
-          aclocal
-          autoconf
-          automake --add-missing
-          ./configure
-          make dist
+          dpkg-buildpackage -us -uc

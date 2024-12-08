@@ -1,0 +1,15 @@
+Source: devops-lab3
+Section: unknown
+Priority: optional
+Maintainer: yevheniia <bukhalo.yevheniia@lll.kpi.ua>
+Build-Depends: debhelper-compat (= 13), autotools-dev
+Standards-Version: 4.6.0
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/devops-lab3
+#Vcs-Git: https://salsa.debian.org/debian/devops-lab3.git
+Rules-Requires-Root: no
+
+Package: devops-lab3
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sample C++ program for DevOps Lab
