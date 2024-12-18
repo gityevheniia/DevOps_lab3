@@ -2,10 +2,10 @@
 FROM python:3.9-slim AS builder
 
 WORKDIR /app
-COPY http_server.py .
+RUN apt-get update && apt-get install -y git
 
-# Install Python dependencies (if any)
-RUN pip install --no-cache-dir --upgrade pip
+# Clone public GitHub repository
+RUN git clone https://github.com/gityevheniia/DevOps_lab3.git .
 
 # Stage 2: Runtime image
 FROM python:3.9-slim
